@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nl "\n"
+using namespace std;
+int main() {
+	ll tc;
+	cin>>tc;
+	while(tc--)
+	{
+	      ll x,y;
+	      cin>>x>>y;
+	      if(x==0){if(y%2!=0){cout<<"NO"<<nl;continue;}}
+	      if(x%2!=0){cout<<"NO"<<nl;continue;}
+	      cout<<"YES"<<nl;
+     	}
+	return 0;
+}
