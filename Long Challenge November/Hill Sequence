@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nl "\n"
+#define pb push_back
+using namespace std;
+int main() {
+	ll tc;
+	cin>>tc;
+	while(tc--)
+	{
+	      vector<ll> inp;
+	     int n,temp,count=0;
+	     cin>>n;
+	     
+	     map<ll,ll> mp;
+	     int maxi=0;
+	     for(int i=0;i<n;i++)
+	     {
+	           cin>>temp;
+	           inp.pb(temp);
+	           mp[temp]++;
+	           if(mp[temp]>count){count=mp[temp];}
+	     }
+	     //cout<<count<<nl;
+	     if(count>2){cout<<-1<<nl;continue;}
+	     sort(inp.begin(),inp.end(),greater<ll>());
+	     if(inp[0]==inp[1]){cout<<"-1"<<nl;continue;}
+	     vector<ll> dou;
+	     int z=n-1;
+	     for(int i=1;i<z;i++)
+	     {
+	           if(inp[i]==inp[i+1])
+	           {
+	                 dou.pb(inp[i]);
+	                 vector<ll>::iterator it;
+	                 it=inp.begin()+i;
+	                 inp.erase(it);
+	                 z--;
+	           }
+	     }
+	     for(int i=dou.size()-1;i>=0;i--)
+	      cout<<dou[i]<<" ";
+	     for(int i=0;i<inp.size();i++)
+	      cout<<inp[i]<<" ";
+	     cout<<nl;
+	}
+	return 0;
+}
