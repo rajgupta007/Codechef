@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define nl "\n"
+using namespace std;
+int main() {
+	ll tc;
+	cin>>tc;
+	while(tc--)
+	{
+	   ll n,m;
+	   cin>>n>>m;
+	   //cout<<nl;  
+	   for(int i=1;i<n;i++)
+	   {
+	     cout<<i<<" "<<i+1<<nl;
+	   }
+	   int t=m-(n-1); 
+	   for(int i=3;i<=n;i++)
+	   {
+	         for(int l=i-2;l>=1;l--)
+	         {
+	               if(t==0)break;
+	               t--;
+	               cout<<i<<" "<<l<<nl;
+	         }        
+	   }
+	}
+	return 0;
+}
